@@ -1,0 +1,7 @@
+{  
+    "webhooks": {  
+        "login": "https://your-webhook-url/login",  
+        "currentSession": "https://your-webhook-url/session",  
+        "liveEvent": "https://your-webhook-url/live"  
+    }
+}
