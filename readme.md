@@ -83,7 +83,7 @@ The payload looks like this:
 
 ## Configuration
 
-Open the `pck-webhook-conf.json` and add your three different webhooks. Webhooks generally do not require an access token, but ensure that the webhook can handle POST requests.
+Open the `pck-webhook-conf.json` and add your three different webhooks. Webhooks generally do not require an access token, but ensure that the webhook can handle POST requests. You can of course also use the same webhook for all three events. I just used three diffrent for loggin purposes.
 
 ```json
 {  
