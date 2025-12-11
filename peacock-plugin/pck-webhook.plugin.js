@@ -87,7 +87,7 @@ module.exports = (controller) => {
                     "LOCATION_ANCESTRAL_SMOOTHSNAKE": "Mendoza",  
                     "LOCATION_CARPATHIAN_MOUNTAINS": "Carpathian Mountains",  
                     "LOCATION_AMBROSE_ISLAND": "Ambrose Island",  
-                    "LOCATION_NEWZEALAND": "New Zealand",  
+                    "LOCATION_NEWZEALAND": "Hawke's Bay",  
                     "LOCATION_TRAPPED_WOLVERINE": "Carpathian Mountains",  
                     "LOCATION_ROCKY_DUGONG": "Ambrose Island"  
                 }  
