@@ -229,51 +229,8 @@ module.exports = (controller) => {
         if (event.Name === "ContractStart") {  
             const contract = controller.resolveContract(session.contractId, details.gameVersion)  
             if (contract) {  
-<<<<<<< HEAD
                 // Resolve location name using cached lookup  
                 const locationName = getLocationNameCached(contract?.Metadata?.Location, details.gameVersion) || "unknown"  
-=======
-                // Map location ID to readable name  
-                const locationMap = {  
-                    "LOCATION_ICA_FACILITY_SHIP": "ICA Facility Ship",  
-                    "LOCATION_ICA_FACILITY_ARRIVAL": "ICA Facility Arrival",  
-                    "LOCATION_ICA_FACILITY": "ICA Facility",  
-                    "LOCATION_COASTALTOWN": "Sapienza",  
-                    "LOCATION_COASTALTOWN_EBOLA": "Sapienza",  
-                    "LOCATION_COASTALTOWN_MOVIESET": "Sapienza",  
-                    "LOCATION_COASTALTOWN_NIGHT": "Sapienza",  
-                    "LOCATION_MARRAKECH": "Marrakesh",  
-                    "LOCATION_MARRAKECH_NIGHT": "Marrakesh",  
-                    "LOCATION_BANGKOK": "Bangkok",  
-                    "LOCATION_BANGKOK_ZIKA": "Bangkok",  
-                    "LOCATION_COLORADO": "Colorado",  
-                    "LOCATION_COLORADO_RABIES": "Colorado",  
-                    "LOCATION_HOKKAIDO": "Hokkaido",  
-                    "LOCATION_HOKKAIDO_FLU": "Hokkaido",  
-                    "LOCATION_HAWKE": "Hawke's Bay",  
-                    "LOCATION_MIAMI": "Miami",  
-                    "LOCATION_SANTAFORTUNA": "Santa Fortuna",  
-                    "LOCATION_MUMBAI": "Mumbai",  
-                    "LOCATION_NORTHAMERICA": "Whittleton Creek",  
-                    "LOCATION_NORTHSEA": "Isle of Sgàil",  
-                    "LOCATION_GREEDY_RACCOON": "New York",  
-                    "LOCATION_OPULENT_STINGRAY": "Haven Island",  
-                    "LOCATION_COLOMBIA": "Santa Fortuna",  
-                    "LOCATION_GOLDEN_GECKO": "Dubai",  
-                    "LOCATION_ELEGANT_LLAMA": "Mendoza",  
-                    "LOCATION_ANCESTRAL_BULLDOG": "Dartmoor",  
-                    "LOCATION_EDGY_FOX": "Berlin",  
-                    "LOCATION_WET_RAT": "Chongqing",  
-                    "LOCATION_ANCESTRAL_SMOOTHSNAKE": "Mendoza",  
-                    "LOCATION_CARPATHIAN_MOUNTAINS": "Carpathian Mountains",  
-                    "LOCATION_AMBROSE_ISLAND": "Ambrose Island",  
-                    "LOCATION_NEWZEALAND": "Hawke's Bay",  
-                    "LOCATION_TRAPPED_WOLVERINE": "Carpathian Mountains",  
-                    "LOCATION_ROCKY_DUGONG": "Ambrose Island"  
-                }  
-                  
-                const locationName = locationMap[contract?.Metadata?.Location] || contract?.Metadata?.Location || "unknown"  
->>>>>>> 97ff3f3756e987b8d5658fe319b106efed2e14b5
                   
                 session.location = locationName  
                 session.locationId = contract?.Metadata?.Location || "unknown"  
