@@ -1,7 +1,28 @@
-{  
-    "webhooks": {  
-        "login": "https://your-webhook-url/login",  
-        "currentSession": "https://your-webhook-url/session",  
-        "liveEvent": "https://your-webhook-url/live"  
+{
+    "webhooks": {
+        "login": "https://your-webhook-url/login",
+        "currentSession": "https://your-webhook-url/session",
+        "liveEvent": "https://your-webhook-url/live"
+    },
+    "liveEventConfig": {
+        "Target eliminated": true,
+        "Non-target eliminated": true,
+        "NPC pacified": false,
+        "Mission failed": true,
+        "Mission completed": true,
+        "Disguise changed": false,
+        "Disguise blown": true,
+        "Spotted": false,
+        "Witnesses": false,
+        "Body hidden": false,
+        "Body found": false,
+        "Item picked up": false,
+        "Item dropped": false,
+        "Objective completed": true,
+        "Security system event": false,
+        "Area discovered": false,
+        "Trespassing": false,
+        "Opportunity event": false,
+        "Unnoticed kill": true
     }
 }

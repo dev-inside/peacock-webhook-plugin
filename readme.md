@@ -18,7 +18,8 @@ As the name suggests, the login webhook is triggered only during login, typicall
 {  
     "event": "login",  
     "userId": "1273f7aa-e53b-4446-b940-0c32430dec0c",  
-    "gameVersion": "h3",  
+    "gameVersion": "h3",
+    "peacockVersion": "8.6.0",
     "timestamp": "2025-12-04T10:30:00.000Z"  
 }
 ```
@@ -26,6 +27,7 @@ As the name suggests, the login webhook is triggered only during login, typicall
 ### Relevant Data:
 - **event**: Event name
 - **gameVersion**: The game version, e.g., H3 for Hitman 3/WOA
+- **peacockVersion**: currently installed Peacock version
 
 ### 02. currentSession-event
 
@@ -34,7 +36,8 @@ This event is triggered when starting a contract. It contains data about the gam
 ```json
 {  
     "event": "currentSession",  
-    "gamemode": "mission",  
+    "gamemode": "Mission",
+    "gamemodeRaw": "mission",
     "location": "Sapienza",  
     "locationId": "LOCATION_COASTALTOWN",  
     "contractId": "c4142c69-4e34-4b68-8ea2-65c29e4a7d8a",  
@@ -45,10 +48,9 @@ This event is triggered when starting a contract. It contains data about the gam
 
 ### Relevant Data:
 - **event**: Event name
-- **gamemode**: Indicates the type, such as mission or freelancer, etc.
+- **gamemode**: Indicates the type, such as "Mission" or "Freelancer", etc.
 - **location**: Displays the name of the map location as a readable string like _Sapienza_
 - **locationId**: The internal names in Peacock (and presumably in the game itself), e.g., `LOCATION_COASTALTOWN` for _Sapienza_
-- **gameVersion**: The game version, e.g., H3 for Hitman 3/WOA
 
 ### 03. liveEvent
 
@@ -70,7 +72,8 @@ The payload looks like this:
     "location": "Sapienza",  
     "locationId": "LOCATION_COASTALTOWN",  
     "timestamp": "2025-12-04T10:40:45.000Z",  
-    "type": "Mission failed"  
+    "type": "Disguise blown",
+    "disguise": "a790b779-c710-49f8-b1dc-c57afef0d189"
 }
 ```
 
@@ -85,13 +88,36 @@ The payload looks like this:
 
 Open the `pck-webhook-conf.json` and add your three different webhooks. Webhooks generally do not require an access token, but ensure that the webhook can handle POST requests.
 
+`liveEventConfig` allows you to enable/disable in-game-events such as `Target eliminated` or `Tresspassing`. 
+
 ```json
 {  
     "webhooks": {  
         "login": "https://your-webhook-url/login",  
         "currentSession": "https://your-webhook-url/session",  
         "liveEvent": "https://your-webhook-url/live"  
-    }  
+    },
+    "liveEventConfig": {
+        "Target eliminated": true,
+        "Non-target eliminated": true,
+        "NPC pacified": false,
+        "Mission failed": true,
+        "Mission completed": true,
+        "Disguise changed": false,
+        "Disguise blown": true,
+        "Spotted": false,
+        "Witnesses": false,
+        "Body hidden": false,
+        "Body found": false,
+        "Item picked up": false,
+        "Item dropped": false,
+        "Objective completed": true,
+        "Security system event": false,
+        "Area discovered": false,
+        "Trespassing": false,
+        "Opportunity event": false,
+        "Unnoticed kill": true
+    }
 }
 ```
 
