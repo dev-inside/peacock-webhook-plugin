@@ -101,7 +101,8 @@ function getLocationAlias(locationId) {
         "LOCATION_ROCKY_DUGONG": "Ambrose Island",  
         "LOCATION_AUSTRIA": "Himmelstein",  
         "LOCATION_SALTY_SEAGULL": "Hantu Port",  
-        "LOCATION_CAGED_FALCON": "Siberia"  
+        "LOCATION_CAGED_FALCON": "Siberia",
+        "LOCATION_SNUG": "Safehouse"
     }  
       
     return locationMap[locationId] || locationId  
