@@ -111,7 +111,7 @@ Open the `pck-webhook-conf.json` and add your three different webhooks. Webhooks
         "Body found": false,
         "Item picked up": false,
         "Item dropped": false,
-        "Objective completed": true,
+        "Objective completed": false,
         "Security system event": false,
         "Area discovered": false,
         "Trespassing": false,
