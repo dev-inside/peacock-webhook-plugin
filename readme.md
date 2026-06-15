@@ -1,3 +1,8 @@
+> ### ⚠️ Archived ⚠️
+> This repository has been moved to  
+> https://codeberg.org/devinside/peacock-webhook-plugin
+
+
 # PWP - Peacock Webhook Plugin
 
 The **Peacock Webhook Plugin (PWP)** sends data from the Peacock server to one of three predefined webhooks. This data can be used for various purposes such as notifications, monitoring, or automation. 
